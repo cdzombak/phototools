@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
 
             if (itemN > 1) {
                 NSTimeInterval timePerItem = [startTime timeIntervalSinceNow]*-1.0 / itemN;
-                NSTimeInterval timeRemaining = timePerItem * (items.count - itemN);
+                NSTimeInterval timeRemaining = timePerItem * (items.count - itemN + 1);
                 double minutesRemaining = timeRemaining / 60.0;
                 NSLog(@"%lu of %lu; %1.0f seconds (%1.0f minutes) remaining", itemN, items.count, timeRemaining, minutesRemaining);
             }
