@@ -74,6 +74,8 @@ int main(int argc, const char * argv[]) {
         if (powerAssertionResult == kIOReturnSuccess) {
             IOPMAssertionRelease(powerAssertionID);
         }
+
+        NSLog(@"Done!");
     }
     return 0;
 }
