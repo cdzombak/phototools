@@ -51,12 +51,7 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Filename: %@", filename);
 
             NSString *nameToParse = [filename stringByDeletingPathExtension];
-            if ([nameToParse hasSuffix:@"-1"] || [nameToParse hasSuffix:@"-2"] || [nameToParse hasSuffix:@"-3"]
-                || [nameToParse hasSuffix:@"-4"] || [nameToParse hasSuffix:@"-5"] || [nameToParse hasSuffix:@"-6"]
-                || [nameToParse hasSuffix:@"-7"] || [nameToParse hasSuffix:@"-8"] || [nameToParse hasSuffix:@"-9"]) {
-                // Some of the Dropbox uploads have "-n" suffixes if there were multiple files with identical timestamps.
-                nameToParse = [nameToParse substringToIndex:(nameToParse.length-2)];
-            }
+            nameToParse = [nameToParse substringToIndex:19];
 
             NSDate *parsedDate = [parser dateFromString:nameToParse];
 
